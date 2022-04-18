@@ -1,0 +1,21 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-accordion multi="true" *ngIf="posts.length > 0 && !isLoading">
+    <mat-expansion-panel *ngFor="let post of posts">
+      <mat-expansion-panel-header >
+        {{post.name}}
+      </mat-expansion-panel-header>
+      <p>{{post.surname}}</p>
+      <mat-action-row *ngIf="authService.isAuth">
+        <button mat-button color="primary" [routerLink]="['/edit', post.id]">EDIT</button>
+        <button mat-button color="warn" (click)="onDeleteClick(post.id)" *ngIf="role == 'ADMIN'">DELETE</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <p class="mat-body-1" *ngIf="posts.length <= 0 && !isLoading" style="text-align: center;">No posts yet!</p>
+  <mat-paginator 
+  [length]="totalPosts"
+  [pageSize]="postPerPage"
+  [pageSizeOptions]="pageSizeOptions"
+  (page)="onChangePage($event)"
+  *ngIf="posts.length > 0"
+  ></mat-paginator>
