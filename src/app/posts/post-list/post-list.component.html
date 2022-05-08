@@ -7,8 +7,10 @@
         <p>Data początku: {{post.startDate.slice(0,10)}}&nbsp;&nbsp;</p>
         <p>Marka samochodu: {{post.brand}}&nbsp;&nbsp;</p>
       </mat-expansion-panel-header>
-      <p>Komentarz: {{post.comment}}</p>
-      <p>Opis problemu: {{post.problem}}</p>
+      <p>Opis problemu:</p>
+      <p>{{post.problem}}</p>
+      <p>Komentarz:</p>
+      <p>{{post.comment}}</p>
       <mat-action-row *ngIf="authService.isAuth">
         <button mat-button color="primary" [routerLink]="['/edit', post.id]">EDIT</button>
         <button mat-button color="warn" (click)="onDeleteClick(post.id)" *ngIf="role == 'ADMIN'">DELETE</button>
