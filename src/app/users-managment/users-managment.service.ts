@@ -21,4 +21,12 @@ export class UsersManagmentService {
   getRole(){
     return localStorage.getItem("role")
   }
+
+  setPage(page: string){
+    localStorage.setItem('page', page)
+  }
+
+  getPage(){
+  return  localStorage.getItem('page')
+  }
 }

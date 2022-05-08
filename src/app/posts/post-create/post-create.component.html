@@ -29,13 +29,12 @@
           <mat-option value="Naprawiano">Naprawiano</mat-option>
       </mat-select>
   </mat-form-field>
-      <mat-form-field appearance="outline"  style="grid-column: 1 / 3">
-        <textarea matInput rows="4" formControlName="comment" placeholder="Komentarz" autocomplete="off"></textarea>
-        <mat-error *ngIf="postForm.controls.comment.invalid">Pole nie może być puste.</mat-error>
-      </mat-form-field>
       <mat-form-field appearance="outline" style="grid-column: 1 / 3">
         <textarea matInput rows="4" formControlName="problem" placeholder="Opis problemu" autocomplete="off"></textarea>
         <mat-error *ngIf="postForm.controls.problem.invalid">Pole nie może być puste.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline"  style="grid-column: 1 / 3">
+        <textarea matInput rows="4" formControlName="comment" placeholder="Komentarz" autocomplete="off"></textarea>
       </mat-form-field>
       <button mat-button (click)="openDialog()" type="button" style="height: 5rem; margin-bottom: 1rem;">Dodaj Mechaników</button>
       <mat-chip-list

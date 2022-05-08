@@ -10,7 +10,7 @@ import { User } from '../../users.model';
 export class MechanicsComponent implements OnInit {
 
   mechanics: Array<User> = []
-  addedMechanics: Array<User> = []
+  addMechanics: Array<User> = []
 
   constructor(
     private readonly dialogRef: MatDialogRef<MechanicsComponent>,
@@ -18,19 +18,19 @@ export class MechanicsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.addedMechanics = this.data.addedMechanics;
+    this.addMechanics = this.data.addedMechanics;
     this.mechanics = this.data.allMechanics;
   }
 
   addMechanic(mechanic: User){
     const allMechanics = this.mechanics.filter(mechanics => mechanics.username != mechanic.username)
     this.mechanics = allMechanics
-    this.addedMechanics.push(mechanic)
+    this.addMechanics.push(mechanic)
   }
 
   removeMechanic(mechanic: User){
-    const removedMechanics = this.addedMechanics.filter(mechanics => mechanics.username != mechanic.username)
-    this.addedMechanics = removedMechanics
+    const removedMechanics = this.addMechanics.filter(mechanics => mechanics.username != mechanic.username)
+    this.addMechanics = removedMechanics
     this.mechanics.push(mechanic)
   }
 

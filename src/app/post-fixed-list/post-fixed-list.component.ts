@@ -47,7 +47,7 @@ export class PostFixedListComponent implements OnInit {
   onDeleteClick(postId: string){
     this.isLoading = true;
     this.postsService.deletePost(postId).subscribe( () => {
-      this.postsService.getPosts(this.postPerPage, this.currentPage);
+      this.postsService.getPostsFixed(this.postPerPage, this.currentPage);
     }, () => {
       this.isLoading = false
     })
@@ -57,7 +57,7 @@ export class PostFixedListComponent implements OnInit {
     this.isLoading = true;
     this.currentPage = pageDate.pageIndex + 1;
     this.postPerPage = pageDate.pageSize;
-    this.postsService.getPosts(this.postPerPage, this.currentPage);
+    this.postsService.getPostsFixed(this.postPerPage, this.currentPage);
   }
 
   

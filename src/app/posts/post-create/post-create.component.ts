@@ -117,7 +117,7 @@ export class PostCreateComponent implements OnInit, OnDestroy {
       phone: new FormControl("",[ Validators.required]),
       carNumber: new FormControl("",[ Validators.required]),
       brand: new FormControl("",[ Validators.required]),
-      comment: new FormControl("",[ Validators.required]),
+      comment: new FormControl(""),
       problem: new FormControl("",[ Validators.required]),
       startDate: new FormControl("",[ Validators.required]),
       endDate: new FormControl(""),

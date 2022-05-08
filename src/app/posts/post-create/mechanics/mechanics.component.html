@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="form">
-        <div *ngFor="let mechanic of addedMechanics" >
+        <div *ngFor="let mechanic of addMechanics" >
             <div class="panel">
                 <h2>{{mechanic.username}}</h2>
                 <button mat-mini-fab color="primary" (click)="removeMechanic(mechanic)">
@@ -22,6 +22,5 @@
     </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end" >
-  <button mat-button mat-dialog-close>Anuluj</button>
-  <button mat-button [mat-dialog-close]="[addedMechanics, mechanics]" cdkFocusInitial color="primary">Zmień</button>
+  <button mat-button [mat-dialog-close]="[addMechanics, mechanics]" cdkFocusInitial color="primary">Zmień</button>
 </mat-dialog-actions>

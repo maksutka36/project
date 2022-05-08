@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {Subscription } from 'rxjs';
+import { UsersManagmentService } from 'src/app/users-managment/users-managment.service';
 import { AuthorizationService } from '../authorization.service';
 
 @Component({
@@ -15,10 +16,12 @@ export class LoginComponent implements OnInit, OnDestroy {
   sub!: Subscription;
 
   constructor(
-    private authService: AuthorizationService
+    private authService: AuthorizationService,
+    private usersManagmentService: UsersManagmentService
   ) { }
 
   ngOnInit(): void {
+    this.usersManagmentService.setPage('Pokaż Zlecenia');
     this.form = new FormGroup({
       email: new FormControl ('', Validators.required),
       password: new FormControl ('', Validators.required)

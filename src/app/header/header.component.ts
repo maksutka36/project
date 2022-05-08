@@ -24,4 +24,12 @@ export class HeaderComponent implements OnInit {
   get role(): string{
     return this.usersService.getRole()!
   }
+
+  get page(): string {
+    return this.usersService.getPage()!
+  }
+
+  set page(page: string) {
+    this.usersService.setPage(page)
+  }
 }
