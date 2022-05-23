@@ -234,5 +234,9 @@ export class PostCreateComponent implements OnInit, OnDestroy {
     return this.usersService.getRole()!
   }
 
+  page(){
+    this.usersService.setPage('Pokaż Zlecenia');
+  }
+
 }
 
